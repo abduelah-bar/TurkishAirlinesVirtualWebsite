@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+html, body, #root {
+  height: 100%;
+  font-family: 'Nunito', sans-serif;
+}
+
+@theme inline {
+  --color-ta-red: #E81932;
+  --color-ta-dark-red: #B5142A;
+  --color-ta-navy: #0D1B2A;
+  --color-ta-gold: #C9A84C;
+  --color-ta-light: #F8F8F8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Hide scrollbars by default, show on hover/scroll */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 2px; }
+body { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.2) transparent; }
+
+.font-display { font-family: 'Playfair Display', serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+
+/* TA brand red gradient */
+.bg-ta-gradient { background: linear-gradient(135deg, #E81932 0%, #B5142A 100%); }
+
+/* Glass card */
+.glass-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Animated underline for nav links */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #E81932;
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after { width: 100%; }
+.nav-link.active::after { width: 100%; }
+
+/* Smooth page transitions */
+.page-enter {
+  animation: fadeUp 0.35s ease forwards;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Status badges */
+.badge-approved { background: #d1fae5; color: #065f46; }
+.badge-pending { background: #fef3c7; color: #92400e; }
+.badge-rejected { background: #fee2e2; color: #991b1b; }
+.badge-active { background: #dbeafe; color: #1e40af; }
+
+/* Table styles */
+.ta-table { border-collapse: collapse; width: 100%; }
+.ta-table th { background: #0D1B2A; color: white; padding: 12px 16px; text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+.ta-table td { padding: 12px 16px; border-bottom: 1px solid #f0f0f0; font-size: 14px; }
+.ta-table tr:hover td { background: #fdf8f8; }
+
+/* Stat card hover */
+.stat-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.stat-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+
+/* Form inputs */
+.ta-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 6px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  transition: border-color 0.2s;
+  outline: none;
+}
+.ta-input:focus { border-color: #E81932; box-shadow: 0 0 0 3px rgba(232,25,50,0.1); }
+
+.ta-btn-primary {
+  background: linear-gradient(135deg, #E81932, #B5142A);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  font-family: 'Nunito', sans-serif;
+}
+.ta-btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+
+.ta-btn-secondary {
+  background: transparent;
+  color: #E81932;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  border: 2px solid #E81932;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Nunito', sans-serif;
+}
+.ta-btn-secondary:hover { background: #E81932; color: white; }

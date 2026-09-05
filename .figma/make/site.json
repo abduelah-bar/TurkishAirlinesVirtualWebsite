@@ -1,0 +1,10 @@
+{
+  "description": "A virtual airline platform offering pilot applications, management portals, and real-time Discord integration for seamless pilot and admin coordination.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
